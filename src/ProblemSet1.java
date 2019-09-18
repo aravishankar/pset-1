@@ -16,13 +16,26 @@ public class ProblemSet1 {
     
     public static void main(String[] args) {
         
+        //Dimensions in Inches
+        final float lengthInInches = 8.5f;
+        final int heightInInches = 11;
+
         /*
          * Exercise 1.
          * 
          * What is the area (in square millimeters) of an 8.5-by-11-inch sheet of paper?
          */
+
+        //Convert Dimensions to Millimeters
+        final float inchesToMillimeters = 25.4f;
+        float lengthInMillimeters = lengthInInches*inchesToMillimeters;
+        float heightInMillimeters = heightInInches*inchesToMillimeters;
         
-        
+        //Calculate + Format Area
+        float area = lengthInMillimeters*heightInMillimeters;
+        float areaRounded = Math.round(area * 100.0)/100.0f;
+        String areaFormatted = String.format("%,.2f", areaRounded);
+        System.out.println("\n" + areaFormatted + " square millimeters. \n");
         
         /*
          * Exercise 2.
@@ -30,8 +43,16 @@ public class ProblemSet1 {
          * What is the perimeter (in centimeters) of an 8.5-by-11-inch sheet of paper?
          */
         
+        //Convert Dimensions to Centimeters
+        final float inchesToCentimeters = 2.54f;
+        float lengthInCentimeters = lengthInInches*inchesToCentimeters;
+        float heightInCentimeters = heightInInches*inchesToCentimeters;
         
-        
+        //Calculate + Format Perimeter
+        float perimeter = 2*lengthInCentimeters + 2*heightInCentimeters;
+        float perimeterRounded = Math.round(perimeter * 100.0)/100.0f;
+        System.out.println("\n" + perimeterRounded + " centimeters. \n");
+
         /*
          * Exercise 3.
          * 
@@ -39,7 +60,9 @@ public class ProblemSet1 {
          * by-11-inch sheet of paper?
          */
         
-        
+        // float diagonalLength = Math.hypot(lengthInInches, heightInInches);
+        // float diagonalLengthRounded = Math.round(diagonalLength * 100.0)/100.0f;
+        // System.out.println("\n" + diagonalLengthRounded + " inches. \n");        
 
         /*
          * Exercise 4.
