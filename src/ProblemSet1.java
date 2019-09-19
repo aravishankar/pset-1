@@ -12,12 +12,15 @@
  * questions, and fix your mistakes. It's the only way to get good at programming.
  */
 
+//Packages
+import java.text.NumberFormat;
+
 public class ProblemSet1 {
-    
+
     public static void main(String[] args) {
-        
+
         //Dimensions in Inches
-        final float lengthInInches = 8.5f;
+        final double lengthInInches = 8.5d;
         final int heightInInches = 11;
 
         /*
@@ -27,15 +30,14 @@ public class ProblemSet1 {
          */
 
         //Convert Dimensions to Millimeters
-        final float inchesToMillimeters = 25.4f;
-        float lengthInMillimeters = lengthInInches*inchesToMillimeters;
-        float heightInMillimeters = heightInInches*inchesToMillimeters;
+        final double inchesToMillimeters = 25.4d;
+        double lengthInMillimeters = lengthInInches*inchesToMillimeters;
+        double heightInMillimeters = heightInInches*inchesToMillimeters;
         
         //Calculate + Format Area
-        float area = lengthInMillimeters*heightInMillimeters;
-        float areaRounded = Math.round(area * 100.0)/100.0f;
-        String areaFormatted = String.format("%,.2f", areaRounded);
-        System.out.println("\n" + areaFormatted + " square millimeters. \n");
+        double area = lengthInMillimeters*heightInMillimeters;
+        double areaRounded = Math.round(area * 100.0)/100.0d;
+        System.out.printf("\n%,.2f square millimeters.\n", area);
         
         /*
          * Exercise 2.
@@ -44,14 +46,13 @@ public class ProblemSet1 {
          */
         
         //Convert Dimensions to Centimeters
-        final float inchesToCentimeters = 2.54f;
-        float lengthInCentimeters = lengthInInches*inchesToCentimeters;
-        float heightInCentimeters = heightInInches*inchesToCentimeters;
+        final double inchesToCentimeters = 2.54d;
+        double lengthInCentimeters = lengthInInches*inchesToCentimeters;
+        double heightInCentimeters = heightInInches*inchesToCentimeters;
         
         //Calculate + Format Perimeter
-        float perimeter = 2*lengthInCentimeters + 2*heightInCentimeters;
-        float perimeterRounded = Math.round(perimeter * 100.0)/100.0f;
-        System.out.println("\n" + perimeterRounded + " centimeters. \n");
+        double perimeter = 2*lengthInCentimeters + 2*heightInCentimeters;
+        System.out.printf("\n%.2f centimeters.\n", perimeter);
 
         /*
          * Exercise 3.
@@ -60,9 +61,8 @@ public class ProblemSet1 {
          * by-11-inch sheet of paper?
          */
         
-        // float diagonalLength = Math.hypot(lengthInInches, heightInInches);
-        // float diagonalLengthRounded = Math.round(diagonalLength * 100.0)/100.0f;
-        // System.out.println("\n" + diagonalLengthRounded + " inches. \n");        
+         double diagonalLength = Math.hypot(lengthInInches, heightInInches);
+         System.out.printf("\n%.2f inches.\n", diagonalLength);
 
         /*
          * Exercise 4.
@@ -81,7 +81,17 @@ public class ProblemSet1 {
         int test2 = 87;
         int test3 = 82;
         
-        
+        //Weight Scales
+        final double homeworkWeight = 0.15;
+        final double quizWeight = 0.35;
+        final double testWeight = 0.50;
+
+
+        //WRONG OUTPUT -- 80.15% when 80.48% expected
+        //Calculate Grade
+        double grade = (((double) homework1+homework2+homework3)/3)*homeworkWeight +
+            (((double) quiz1+quiz2+quiz3)/3)*quizWeight+(((double) test1+test2+test3)/3)*testWeight;
+        System.out.printf("\n%.2f%%\n", grade);
         
         /*
          * Exercise 5.
@@ -90,15 +100,43 @@ public class ProblemSet1 {
          * will I make this week?
          */
 
-        
-        
+        //Wage Values        
+        final double wage = 12.50d;
+
+        //Schedule
+        double mondayHours = 7.5d;
+        double tuesdayHours = 8d;
+        double wednesdayHours = 10.5d;
+        double thursdayHours = 9.5d;
+        double fridayHours = 6d;
+        double saturdayHours = 11.5d;
+        double sundayHours = 0d;
+
+        //Calculate Pay
+        double pay = wage*mondayHours+wage*tuesdayHours+wage*wednesdayHours+wage*thursdayHours
+            +wage*fridayHours+wage*saturdayHours+wage*sundayHours;
+        System.out.printf("\n$%.2f.\n", pay);
+
+
+
         /*
          * Exercise 6.
          * 
          * What is my take-home pay each check?
          */
         
-        
+        //Initializing constants
+        final double salary = 117000;
+        final double incomeTaxFed = 0.24;
+        final double incomeTaxState = 0.0637;
+        final double income401kContribution = 0.07;
+
+        //Calculate Pay
+        double bimonthlyPay = salary/24;
+        bimonthlyPay -= bimonthlyPay*income401kContribution;
+        bimonthlyPay -= bimonthlyPay*incomeTaxFed;
+        bimonthlyPay -= bimonthlyPay*incomeTaxState;
+        System.out.printf("\n$%,.2f.\n", bimonthlyPay);
         
         /*
          * Exercise 7.
@@ -107,7 +145,15 @@ public class ProblemSet1 {
          * people will be on the last bus?
          */
         
-        
+        //Initialize Constants
+        final double students = 273;
+        final double teachers = 28;
+        final double capacity = 54;
+
+        //Calculations
+        double buses = Math.ceil((students+teachers)/capacity);
+        double extraPeople = (students+teachers)%capacity;
+        System.out.printf("\n%.0f buses are needed, with %.0f passengers on the last bus.\n", buses, extraPeople);
         
         /*
          * Exercise 8.
@@ -115,7 +161,14 @@ public class ProblemSet1 {
          * What is the surface area of a standard Cornhole board?
          */
         
-        
+        //Initialize Constants
+        final double boardLength = 48;
+        final double boardWidth = 24;
+        final double diameter = 6;
+
+        //Calculations
+        double boardArea = boardLength*boardWidth - Math.PI*Math.pow(diameter/2, 2);
+        System.out.printf("\n%,.2f square inches.\n", boardArea);
         
         /*
          * Exercise 9.
@@ -123,8 +176,18 @@ public class ProblemSet1 {
          * Are the years 2020, 2100, and 2400 leap years?
          */
         
-        
-        
+        //Initialize Year Variables
+        // double year1 = 2020;
+        // double year2 = 2100;
+        // int year3 = 2400;
+
+        //Calculations
+        // boolean isLeap1 = ((year1%4 != 0) && ((year1%100 == 0) && (year1%400 == 0)));
+        // boolean isLeap2 = ;
+        // boolean isLeap3 = ;
+        // System.out.printf("\n%.0f is a leap year...%f", year1, isLeap1);
+
+
         /*
          * Exercise 10.
          * 
