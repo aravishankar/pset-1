@@ -194,7 +194,13 @@ public class ProblemSet1 {
          * What is the wind chill?
          */
         
-        
+         //Initialize Variables
+        double temperature = 38;
+        double windSpeed = 14;
+
+        //Calculations
+        double windChill = 35.74 + 0.6215*temperature+(0.4275*temperature - 35.75)*Math.pow(windSpeed, 0.16);
+        System.out.printf("\n%.1f degrees.\n" + "\n", windChill);
         
     }
 }
