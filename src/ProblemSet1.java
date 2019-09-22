@@ -19,9 +19,6 @@ public class ProblemSet1 {
 
     public static void main(String[] args) {
 
-        //Dimensions in Inches
-        final double lengthInInches = 8.5d;
-        final double heightInInches = 11;
 
         /*
          * Exercise 1.
@@ -29,14 +26,17 @@ public class ProblemSet1 {
          * What is the area (in square millimeters) of an 8.5-by-11-inch sheet of paper?
          */
 
-        //Convert Dimensions to Millimeters
-        final double inchesToMillimeters = 25.4d;
+        //Initialize Constants
+        final double lengthInInches = 8.5;
+        final double heightInInches = 11;
+
+        //Calculate Conversions 
+        final double inchesToMillimeters = 25.4;
         double lengthInMillimeters = lengthInInches*inchesToMillimeters;
         double heightInMillimeters = heightInInches*inchesToMillimeters;
         
-        //Calculate + Format Area
+        //Calculate Area
         double area = lengthInMillimeters*heightInMillimeters;
-        double areaRounded = Math.round(area * 100.0)/100.0d;
         System.out.printf("\n%,.2f square millimeters.\n", area);
         
         /*
@@ -45,12 +45,15 @@ public class ProblemSet1 {
          * What is the perimeter (in centimeters) of an 8.5-by-11-inch sheet of paper?
          */
         
-        //Convert Dimensions to Centimeters
+        //Initialize Constants
+        //Reused old variables
+
+        //Calculate Conversions
         final double inchesToCentimeters = 2.54d;
         double lengthInCentimeters = lengthInInches*inchesToCentimeters;
         double heightInCentimeters = heightInInches*inchesToCentimeters;
         
-        //Calculate + Format Perimeter
+        //Calculate Perimeter
         double perimeter = 2*lengthInCentimeters + 2*heightInCentimeters;
         System.out.printf("\n%.2f centimeters.\n", perimeter);
 
@@ -61,6 +64,10 @@ public class ProblemSet1 {
          * by-11-inch sheet of paper?
          */
         
+         //Initialized Constants
+         //Reused old variables
+
+         //Calculate Length
          double diagonalLength = Math.hypot(lengthInInches, heightInInches);
          System.out.printf("\n%.2f inches.\n", diagonalLength);
 
@@ -81,7 +88,7 @@ public class ProblemSet1 {
         int test2 = 87;
         int test3 = 82;
         
-        //Weight Scales
+        //Initialize Weight Constants
         final double homeworkWeight = 0.15;
         final double quizWeight = 0.35;
         final double testWeight = 0.50;
@@ -99,7 +106,7 @@ public class ProblemSet1 {
          * will I make this week?
          */
 
-        //Wage Values        
+        //Initialize Constants        
         final double wage = 12.50d;
 
         //Schedule
@@ -124,7 +131,7 @@ public class ProblemSet1 {
          * What is my take-home pay each check?
          */
         
-        //Initializing constants
+        //Initialize Constants
         final double salary = 117000;
         final double incomeTaxFed = 0.24;
         final double incomeTaxState = 0.0637;
@@ -149,10 +156,11 @@ public class ProblemSet1 {
         final double teachers = 28;
         final double capacity = 54;
 
-        //Calculations
+        //Calculate Buses, Capacity
         double buses = Math.ceil((students+teachers)/capacity);
         double extraPeople = (students+teachers)%capacity;
-        System.out.printf("\n%.0f buses are needed, with %.0f passengers on the last bus.\n", buses, extraPeople);
+        System.out.printf("\n%.0f buses are needed, with %.0f passengers on the last bus.\n", 
+            buses, extraPeople);
         
         /*
          * Exercise 8.
@@ -165,7 +173,7 @@ public class ProblemSet1 {
         final double boardWidth = 24;
         final double diameter = 6;
 
-        //Calculations
+        //Calculate Area
         double boardArea = boardLength*boardWidth - Math.PI*Math.pow(diameter/2, 2);
         System.out.printf("\n%,.2f square inches.\n", boardArea);
         
@@ -175,18 +183,18 @@ public class ProblemSet1 {
          * Are the years 2020, 2100, and 2400 leap years?
          */
         
-        //Initialize Year Variables
+        //Initialize Variables
         double year2020 = 2020;
         double year2100 = 2100;
         double year2400 = 2400;
 
-        //Calculations
+        //Calculate Leap Year
         boolean is2020Leap = (year2020%4 == 0) && ((year2020%100 != 0) || (year2020%400 == 0));
         boolean is2100Leap = (year2100%4 == 0) && ((year2100%100 != 0) || (year2100%400 == 0));
         boolean is2400Leap = (year2400%4 == 0) && ((year2400%100 != 0) || (year2400%400 == 0));
-        System.out.printf("\n%.0f is a leap year...%b", year2020, is2020Leap);
-        System.out.printf("\n%.0f is a leap year...%b", year2100, is2100Leap);
-        System.out.printf("\n%.0f is a leap year...%b\n", year2400, is2400Leap);
+        System.out.printf("\n%.0f is a leap year...%b.", year2020, is2020Leap);
+        System.out.printf("\n%.0f is a leap year...%b.", year2100, is2100Leap);
+        System.out.printf("\n%.0f is a leap year...%b.\n", year2400, is2400Leap);
 
                 
 
@@ -201,7 +209,7 @@ public class ProblemSet1 {
         double temperature = 38;
         double windSpeed = 14;
 
-        //Calculations
+        //Calculate Wind Chill
         double windChill = 35.74 + 0.6215*temperature+(0.4275*temperature - 35.75)*Math.pow(windSpeed, 0.16);
         System.out.printf("\n%.1f degrees.\n\n", windChill);
         
