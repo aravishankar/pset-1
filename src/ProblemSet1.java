@@ -21,7 +21,7 @@ public class ProblemSet1 {
 
         //Dimensions in Inches
         final double lengthInInches = 8.5d;
-        final int heightInInches = 11;
+        final double heightInInches = 11;
 
         /*
          * Exercise 1.
@@ -87,11 +87,10 @@ public class ProblemSet1 {
         final double testWeight = 0.50;
 
 
-        //WRONG OUTPUT -- 80.15% when 80.48% expected
         //Calculate Grade
         double grade = (((double) homework1+homework2+homework3)/3)*homeworkWeight +
             (((double) quiz1+quiz2+quiz3)/3)*quizWeight+(((double) test1+test2+test3)/3)*testWeight;
-        System.out.printf("\n%.2f%%\n", grade);
+        System.out.printf("\n%.2f%%.\n", grade);
         
         /*
          * Exercise 5.
@@ -177,15 +176,19 @@ public class ProblemSet1 {
          */
         
         //Initialize Year Variables
-        // double year1 = 2020;
-        // double year2 = 2100;
-        // int year3 = 2400;
+        double year2020 = 2020;
+        double year2100 = 2100;
+        double year2400 = 2400;
 
         //Calculations
-        // boolean isLeap1 = ((year1%4 != 0) && ((year1%100 == 0) && (year1%400 == 0)));
-        // boolean isLeap2 = ;
-        // boolean isLeap3 = ;
-        // System.out.printf("\n%.0f is a leap year...%f", year1, isLeap1);
+        boolean is2020Leap = ((year2020%4 != 0) && ((year2020%100 == 0) && (year2020%400 == 0)));
+        boolean is2100Leap = ((year2100%4 != 0) && ((year2100%100 == 0) && (year2100%400 == 0)));
+        boolean is2400Leap = ((year2400%4 != 0) && ((year2400%100 == 0) && (year2400%400 == 0)));
+        System.out.printf("\n%.0f is a leap year...%b\n", year2020, is2020Leap);
+        System.out.printf("\n%.0f is a leap year...%b\n", year2100, is2100Leap);
+        System.out.printf("\n%.0f is a leap year...%b\n", year2400, is2400Leap);
+
+                
 
 
         /*
@@ -200,7 +203,7 @@ public class ProblemSet1 {
 
         //Calculations
         double windChill = 35.74 + 0.6215*temperature+(0.4275*temperature - 35.75)*Math.pow(windSpeed, 0.16);
-        System.out.printf("\n%.1f degrees.\n" + "\n", windChill);
+        System.out.printf("\n%.1f degrees.\n\n", windChill);
         
     }
 }
