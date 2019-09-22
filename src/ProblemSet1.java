@@ -181,11 +181,11 @@ public class ProblemSet1 {
         double year2400 = 2400;
 
         //Calculations
-        boolean is2020Leap = ((year2020%4 != 0) && ((year2020%100 == 0) && (year2020%400 == 0)));
-        boolean is2100Leap = ((year2100%4 != 0) && ((year2100%100 == 0) && (year2100%400 == 0)));
-        boolean is2400Leap = ((year2400%4 != 0) && ((year2400%100 == 0) && (year2400%400 == 0)));
-        System.out.printf("\n%.0f is a leap year...%b\n", year2020, is2020Leap);
-        System.out.printf("\n%.0f is a leap year...%b\n", year2100, is2100Leap);
+        boolean is2020Leap = (year2020%4 == 0) && ((year2020%100 != 0) || (year2020%400 == 0));
+        boolean is2100Leap = (year2100%4 == 0) && ((year2100%100 != 0) || (year2100%400 == 0));
+        boolean is2400Leap = (year2400%4 == 0) && ((year2400%100 != 0) || (year2400%400 == 0));
+        System.out.printf("\n%.0f is a leap year...%b", year2020, is2020Leap);
+        System.out.printf("\n%.0f is a leap year...%b", year2100, is2100Leap);
         System.out.printf("\n%.0f is a leap year...%b\n", year2400, is2400Leap);
 
                 
