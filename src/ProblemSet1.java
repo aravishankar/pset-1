@@ -12,7 +12,6 @@
  * questions, and fix your mistakes. It's the only way to get good at programming.
  */
 
-//Packages
 import java.text.NumberFormat;
 
 public class ProblemSet1 {
@@ -27,16 +26,16 @@ public class ProblemSet1 {
          */
 
         //Initialize Constants
-        final double lengthInInches = 8.5;
-        final double heightInInches = 11;
+        final double LENGTH_IN_INCHES = 8.5;
+        final double WIDTH_IN_INCHES = 11;
+        final double INCHES_TO_MILLIMETERS = 25.4;
 
         //Calculate Conversions 
-        final double inchesToMillimeters = 25.4;
-        double lengthInMillimeters = lengthInInches*inchesToMillimeters;
-        double heightInMillimeters = heightInInches*inchesToMillimeters;
+        double lengthInMillimeters = LENGTH_IN_INCHES*INCHES_TO_MILLIMETERS;
+        double widthInMillimeters = WIDTH_IN_INCHES*INCHES_TO_MILLIMETERS;
         
-        //Calculate Area
-        double area = lengthInMillimeters*heightInMillimeters;
+        //Calculate Area & Output
+        double area = lengthInMillimeters*widthInMillimeters;
         System.out.printf("\n%,.2f square millimeters.\n", area);
         
         /*
@@ -46,15 +45,16 @@ public class ProblemSet1 {
          */
         
         //Initialize Constants
-        //Reused old variables
+        //Reused LENGTH_IN_INCHES
+        //Reused WIDTH_IN_INCHES
+        final double INCHES_TO_CENTIMETERS = 2.54d;
 
         //Calculate Conversions
-        final double inchesToCentimeters = 2.54d;
-        double lengthInCentimeters = lengthInInches*inchesToCentimeters;
-        double heightInCentimeters = heightInInches*inchesToCentimeters;
+        double lengthInCentimeters = LENGTH_IN_INCHES*INCHES_TO_CENTIMETERS;
+        double widthInCentimeters = WIDTH_IN_INCHES*INCHES_TO_CENTIMETERS;
         
-        //Calculate Perimeter
-        double perimeter = 2*lengthInCentimeters + 2*heightInCentimeters;
+        //Calculate Perimeter & Output
+        double perimeter = 2*lengthInCentimeters + 2*widthInCentimeters;
         System.out.printf("\n%.2f centimeters.\n", perimeter);
 
         /*
@@ -65,10 +65,11 @@ public class ProblemSet1 {
          */
         
          //Initialized Constants
-         //Reused old variables
+         //Reused LENGTH_IN_INCHES
+         //Reused WIDTH_IN_INCHES
 
-         //Calculate Length
-         double diagonalLength = Math.hypot(lengthInInches, heightInInches);
+         //Calculate Length & Output
+         double diagonalLength = Math.hypot(LENGTH_IN_INCHES, WIDTH_IN_INCHES);
          System.out.printf("\n%.2f inches.\n", diagonalLength);
 
         /*
@@ -88,15 +89,15 @@ public class ProblemSet1 {
         int test2 = 87;
         int test3 = 82;
         
-        //Initialize Weight Constants
-        final double homeworkWeight = 0.15;
-        final double quizWeight = 0.35;
-        final double testWeight = 0.50;
+        //Initialize Constants
+        final double HOMEWORK_WEIGHT = 0.15;
+        final double QUIZ_WEIGHT = 0.35;
+        final double TEST_WEIGHT = 0.50;
 
 
-        //Calculate Grade
-        double grade = (((double) homework1+homework2+homework3)/3)*homeworkWeight +
-            (((double) quiz1+quiz2+quiz3)/3)*quizWeight+(((double) test1+test2+test3)/3)*testWeight;
+        //Calculate Grade & Output
+        double grade = (((double) homework1+homework2+homework3)/3)*HOMEWORK_WEIGHT +
+            (((double) quiz1+quiz2+quiz3)/3)*QUIZ_WEIGHT+(((double) test1+test2+test3)/3)*TEST_WEIGHT;
         System.out.printf("\n%.2f%%.\n", grade);
         
         /*
@@ -107,9 +108,10 @@ public class ProblemSet1 {
          */
 
         //Initialize Constants        
-        final double wage = 12.50d;
+        final double WAGE = 12.50d;
 
-        //Schedule
+        //Initialize Variables
+        //Initialize Schedule
         double mondayHours = 7.5d;
         double tuesdayHours = 8d;
         double wednesdayHours = 10.5d;
@@ -118,9 +120,9 @@ public class ProblemSet1 {
         double saturdayHours = 11.5d;
         double sundayHours = 0d;
 
-        //Calculate Pay
-        double pay = wage*mondayHours+wage*tuesdayHours+wage*wednesdayHours+wage*thursdayHours
-            +wage*fridayHours+wage*saturdayHours+wage*sundayHours;
+        //Calculate Pay & Output
+        double pay = WAGE*mondayHours+WAGE*tuesdayHours+WAGE*wednesdayHours+WAGE*thursdayHours
+            +WAGE*fridayHours+WAGE*saturdayHours+WAGE*sundayHours;
         System.out.printf("\n$%.2f.\n", pay);
 
 
@@ -132,16 +134,16 @@ public class ProblemSet1 {
          */
         
         //Initialize Constants
-        final double salary = 117000;
-        final double incomeTaxFed = 0.24;
-        final double incomeTaxState = 0.0637;
-        final double income401kContribution = 0.07;
+        final double SALARY = 117000;
+        final double INCOME_TAX_FED = 0.24;
+        final double INCOME_TAX_STATE = 0.0637;
+        final double INCOME_401K_CONTRIBUTION = 0.07;
 
-        //Calculate Pay
-        double bimonthlyPay = salary/24;
-        bimonthlyPay -= bimonthlyPay*income401kContribution;
-        bimonthlyPay -= bimonthlyPay*incomeTaxFed;
-        bimonthlyPay -= bimonthlyPay*incomeTaxState;
+        //Calculate Pay & Output
+        double bimonthlyPay = SALARY/24;
+        bimonthlyPay -= bimonthlyPay*INCOME_401K_CONTRIBUTION;
+        bimonthlyPay -= bimonthlyPay*INCOME_TAX_FED;
+        bimonthlyPay -= bimonthlyPay*INCOME_TAX_STATE;
         System.out.printf("\n$%,.2f.\n", bimonthlyPay);
         
         /*
@@ -152,13 +154,13 @@ public class ProblemSet1 {
          */
         
         //Initialize Constants
-        final double students = 273;
-        final double teachers = 28;
-        final double capacity = 54;
+        final double STUDENTS = 273;
+        final double TEACHERS = 28;
+        final double CAPACITY = 54;
 
-        //Calculate Buses, Capacity
-        double buses = Math.ceil((students+teachers)/capacity);
-        double extraPeople = (students+teachers)%capacity;
+        //Calculate Buses, Capacity & Output
+        double buses = Math.ceil((STUDENTS+TEACHERS)/CAPACITY);
+        double extraPeople = (STUDENTS+TEACHERS)%CAPACITY;
         System.out.printf("\n%.0f buses are needed, with %.0f passengers on the last bus.\n", 
             buses, extraPeople);
         
@@ -169,12 +171,12 @@ public class ProblemSet1 {
          */
         
         //Initialize Constants
-        final double boardLength = 48;
-        final double boardWidth = 24;
-        final double diameter = 6;
+        final double BOARD_LENGTH = 48;
+        final double BOARD_WIDTH = 24;
+        final double DIAMETER = 6;
 
-        //Calculate Area
-        double boardArea = boardLength*boardWidth - Math.PI*Math.pow(diameter/2, 2);
+        //Calculate Area & Output
+        double boardArea = BOARD_LENGTH*BOARD_WIDTH - Math.PI*Math.pow(DIAMETER/2, 2);
         System.out.printf("\n%,.2f square inches.\n", boardArea);
         
         /*
@@ -188,7 +190,7 @@ public class ProblemSet1 {
         double year2100 = 2100;
         double year2400 = 2400;
 
-        //Calculate Leap Year
+        //Calculate Leap Year & Output
         boolean is2020Leap = (year2020%4 == 0) && ((year2020%100 != 0) || (year2020%400 == 0));
         boolean is2100Leap = (year2100%4 == 0) && ((year2100%100 != 0) || (year2100%400 == 0));
         boolean is2400Leap = (year2400%4 == 0) && ((year2400%100 != 0) || (year2400%400 == 0));
@@ -209,9 +211,11 @@ public class ProblemSet1 {
         double temperature = 38;
         double windSpeed = 14;
 
-        //Calculate Wind Chill
-        double windChill = 35.74 + 0.6215*temperature+(0.4275*temperature - 35.75)*Math.pow(windSpeed, 0.16);
+        //Calculate Wind Chill & Output
+        double windChill = 35.74 + 0.6215*temperature+
+            (0.4275*temperature - 35.75)*Math.pow(windSpeed, 0.16);
         System.out.printf("\n%.1f degrees.\n\n", windChill);
         
     }
+    
 }
