@@ -18,7 +18,6 @@ public class ProblemSet1 {
 
     public static void main(String[] args) {
 
-
         /*
          * Exercise 1.
          * 
@@ -94,7 +93,6 @@ public class ProblemSet1 {
         final double QUIZ_WEIGHT = 0.35;
         final double TEST_WEIGHT = 0.50;
 
-
         //Calculate Grade & Output
         double grade = (((double) homework1+homework2+homework3)/3)*HOMEWORK_WEIGHT +
             (((double) quiz1+quiz2+quiz3)/3)*QUIZ_WEIGHT+(((double) test1+test2+test3)/3)*TEST_WEIGHT;
@@ -111,7 +109,6 @@ public class ProblemSet1 {
         final double WAGE = 12.50d;
 
         //Initialize Variables
-        //Initialize Schedule
         double mondayHours = 7.5d;
         double tuesdayHours = 8d;
         double wednesdayHours = 10.5d;
@@ -124,8 +121,6 @@ public class ProblemSet1 {
         double pay = WAGE*mondayHours+WAGE*tuesdayHours+WAGE*wednesdayHours+WAGE*thursdayHours
             +WAGE*fridayHours+WAGE*saturdayHours+WAGE*sundayHours;
         System.out.printf("\n$%.2f.\n", pay);
-
-
 
         /*
          * Exercise 6.
@@ -198,9 +193,6 @@ public class ProblemSet1 {
         System.out.printf("\n%.0f is a leap year...%b.", year2100, is2100Leap);
         System.out.printf("\n%.0f is a leap year...%b.\n", year2400, is2400Leap);
 
-                
-
-
         /*
          * Exercise 10.
          * 
@@ -216,6 +208,5 @@ public class ProblemSet1 {
             (0.4275*temperature - 35.75)*Math.pow(windSpeed, 0.16);
         System.out.printf("\n%.1f degrees.\n\n", windChill);
         
-    }
-    
+    }   
 }
